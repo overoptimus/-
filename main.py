@@ -67,16 +67,28 @@ def main():
         selected = int(input('请选择:'))
         if selected == 1:
             showMonsters(monsters)
-            time.sleep(3)
+            time.sleep(2)
         elif selected == 2:
             # 选择怪物攻击
-            sM = int(input('请选择1-5:'))
-            attack(sM)
-            time.sleep(1)
-        else:
+            while True:
+                sM = int(input('请选择1-5:'))
+                attack(sM)
+                time.sleep(1)
+                sC = int(input('是否继续攻击(1.是 2.否)：'))
+                if sC == 1:
+                    continue
+                elif sC == 2:
+                    break
+                else:
+                    print('请正确选择...')
+                    time.sleep(1)
+        elif selected == 3:
             # 选择装备武器
             sW = int(input('请选择(1.木剑 2.铁剑 3.魔剑):'))
             role.exchangeWeapon(ws[sW - 1])
+        else:
+            print('请选择1-3...')
+            time.sleep(1)
 
 
         if success():  # 判断是否所有的怪都死了

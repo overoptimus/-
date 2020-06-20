@@ -23,6 +23,8 @@ class Role(object):
         # 攻击怪兽的逻辑
         if self.__weapon == None:
             print(self.__name, '没有装备武器，请先装备武器')
+        elif monster.getHealthPoint() <= 0:
+            print('怪物',monster.getName(),'已死，无法攻击')
         else:
             self.__weapon.attackMonster(monster)
 
