@@ -38,7 +38,9 @@ def showMonsters(monsters):
 
 def attack(sM):
     global role
+    global monsters
     role.attack(monsters[sM - 1])
+    monsters[sM - 1].attack(role)
 
 
 def success():

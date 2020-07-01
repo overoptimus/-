@@ -6,6 +6,13 @@ class Role(object):
         super(Role, self).__init__()
         self.__name = name
         self.__weapon = weapon
+        self.__healthPoint = 1000
+
+    def setHealthPoint(self, healthPoint):
+        self.__healthPoint = healthPoint
+        
+    def getHealthPoint(self):
+        return self.__healthPoint
 
     def getName(self):
         return self.__name
